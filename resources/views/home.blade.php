@@ -1,9 +1,9 @@
 <html lang="en" class="dark">
 
 <head>
-   <title>Diskominfo Semarang</title>
-   <link rel="web icon" href="{{ asset('storage/picture/logo.png') }}">
-   <link rel="stylesheet" href="https://flowbite-admin-dashboard.vercel.app//app.css">
+    <title>Diskominfo Semarang</title>
+    <link rel="web icon" href="{{ asset('storage/picture/logo.png') }}">
+    <link rel="stylesheet" href="https://flowbite-admin-dashboard.vercel.app//app.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -106,21 +106,21 @@
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                        <a href="/daftarRuangan"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ruangan</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                        <a href="/isiData"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjaman</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
                     </li>
                     <li>
                         <a href="#"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
 
@@ -194,7 +194,7 @@
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 {{-- flex flex-col items-center justify-center : supaya tulisan ditengah --}}
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Terpakai</h5>
-                <p class="font-normal text-gray-700 dark:text-gray-400">15</p>
+                <p class="font-normal text-gray-700 dark:text-gray-400">3</p>
             </a>
 
             <!-- Kotak 2 -->
@@ -202,7 +202,7 @@
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Tidak Terpakai
                 </h5>
-                <p class="font-normal text-gray-700 dark:text-gray-400">10</p>
+                <p class="font-normal text-gray-700 dark:text-gray-400">1</p>
             </a>
 
             <!-- Kotak 3 -->
@@ -210,7 +210,7 @@
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Dalam Perbaikan
                 </h5>
-                <p class="font-normal text-gray-700 dark:text-gray-400">3</p>
+                <p class="font-normal text-gray-700 dark:text-gray-400">1</p>
             </a>
         </div>
     </div>
@@ -257,7 +257,7 @@
                 </a>
                 <div class="p-5">
                     <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Cendana
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Anggrek
                         </h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -333,7 +333,7 @@
                 </div>
             </div>
             <!-- Kotak 5 -->
-            <div
+            {{-- <div
                 class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0">
                 <a href="#">
                     <img class="rounded-t-lg object-cover w-full h-48"
@@ -359,9 +359,22 @@
                         </svg>
                     </a>
                 </div>
+            </div> --}}
+            <div class="mx-16 my-48">
+                <a href="/daftarRuangan"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                    <span class="sr-only">Icon description</span>
+                </a>
             </div>
         </div>
     </div>
+
+
 
 </body>
 

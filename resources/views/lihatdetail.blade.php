@@ -101,28 +101,28 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="#" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                        <a href="/home" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                             aria-current="page">Home</a> --}}
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                        <a href="/daftarRuangan"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ruangan</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                        <a href="/isiData"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjaman</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
                     </li>
                     <li>
                         <a href="#"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-                    </li>
+                    </li> --}}
                 </ul>
-            </div>
+            </div>>
 
         </div>
     </nav>
@@ -168,6 +168,52 @@
             </li> --}}
         </ol>
     </nav>
+
+    <div class="mx-16">
+        <h6 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Ruang Serbaguna</h6>
+        <a href="#"
+            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
+            {{-- md:max-w-7xl : lebar kotak / cardnya --}}
+            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
+                {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
+                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
+                    src="{{ asset('storage/picture/ruangMeeting.jpg') }}" alt="">
+            </div>
+            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Kapasitas Ruangan</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">20 orang</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Gedung</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">A</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Lantai</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">2</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Alamat</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">Jl. Casablanca No.88</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Deskripsi</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">Ruang Serbaguna Balai Kota Semarang menyediakan
+                        fasilitas modern untuk berbagai kegiatan, mulai dari pertemuan pemerintahan hingga acara sosial.
+                        Dengan lokasi strategis dan kapasitas yang besar, ruang ini menjadi pilihan utama di tengah
+                        kota.</td>
+                </tr>
+                {{-- <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">07032003</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">Terpakai</td>
+                </tr> --}}
+            </table>
+        </a>
+    </div>
 </body>
 
 </html>

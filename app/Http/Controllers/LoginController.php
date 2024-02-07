@@ -3,19 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function index()
+    {
+        return view('login');
+    }
+
     public function login(Request $request)
     {
-        $credentials = $request->only('username', 'password');
+        // Validasi data input
+        $credentials = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
 
-        if (auth()->attempt($credentials)) {
-            // Authentication passed...
+        // Authentikasi pengguna
+        if (Auth::attempt($credentials)) {
+            // Jika autentikasi berhasil, redirect ke halaman berikutnya
             return redirect()->intended('/home');
+        } else {
+            // Jika autentikasi gagal, tampilkan pesan kesalahan
+            return back()->withInput()->withErrors([
+                'username' => 'Invalid username or password.',
+            ]);
         }
-
-        return back()->withInput()->withErrors(['login_failed' => 'Invalid username or password.']);
     }
 }

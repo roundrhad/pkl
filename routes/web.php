@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +16,12 @@ use App\Http\Controllers\LoginController;
 // Route::get('/', function () {
 //     return view('login');
 // });
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+// routes/web.php
 
+use App\Http\Controllers\LoginController;
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
-
 
 Route::get('/home', function () {
     return view('home');
@@ -30,6 +30,7 @@ Route::get('/home', function () {
 Route::get('/detailRuangan', function () {
     return view('detailruangan');
 });
+// home/ruangTerpakai/detailRuangan
 
 Route::get('/isiData', function () {
     return view('formdata');
@@ -38,10 +39,12 @@ Route::get('/isiData', function () {
 Route::get('/lihatDetail', function () {
     return view('lihatdetail');
 });
+// home/lihatDetail
 
 Route::get('/daftarRuangan', function () {
     return view('daftaruangan');
 });
+// /home/lainnya/daftarRuangan
 
 Route::get('/editProfile', function () {
     return view('editprofil');
