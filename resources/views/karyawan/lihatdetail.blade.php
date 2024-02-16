@@ -122,14 +122,14 @@
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                     </li> --}}
                 </ul>
-            </div>
+            </div>>
 
         </div>
     </nav>
 
     <!-- Breadcrumb -->
     <nav
-        class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-sm">
+        class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-xs">
         {{-- max-w-sm : kecil,max-w-md, max-w-lg, max-w-xs, max-w-xxs --}}
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center">
@@ -151,7 +151,8 @@
                             d="m1 9 4-4-4-4" />
                     </svg>
                     <a href="/detailRuangan"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Daftar
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Lihat
+                        Detail
                         Ruangan</a>
                 </div>
             </li>
@@ -169,154 +170,53 @@
     </nav>
 
     {{-- Content --}}
-    <div
-        class="m-16 flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
-        {{-- class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0"> --}}
-        {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-        <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-            {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-            <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                src="{{ asset('storage/picture/ruangMeeting.jpg') }}" alt="">
-        </div>
-        <div class="w-full max-w-full ml-4 md:max-w-screen-md">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white max-w-full">
-                Ruang Serbaguna
-            </h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-full">
-                Ruang Serbaguna Balai Kota Semarang menyediakan fasilitas modern untuk berbagai kegiatan, mulai dari
-                pertemuan pemerintahan hingga acara sosial. Dengan lokasi strategis dan kapasitas yang besar, ruang ini
-                menjadi pilihan utama di tengah kota.
-            </p>
-            <a href="/detailNamaRuang"
-                class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                Detail
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d=" M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
+
+    <div class="mx-16">
+        <h6 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{{ $tempat->nama }}</h6>
+        <div
+            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
+            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
+                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
+                    src="{{ asset('storage/picture/ruangMeeting.jpg') }}" alt="">
+            </div>
+            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Kapasitas Ruangan</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->kapasitas }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Gedung</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->gedung }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Lantai</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->lantai }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Alamat</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->alamat }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Deskripsi</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->deskripsi }}</td>
+                </tr>
+            </table>
         </div>
     </div>
 
-    <div
-        class="m-16 flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
-        {{-- class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0"> --}}
-        {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-        <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-            {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-            <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                src="{{ asset('storage/picture/ruangMeeting2.jpg') }}" alt="">
-        </div>
-        <div class="w-full max-w-full ml-4 md:max-w-screen-md">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white max-w-full">
-                Ruang Serbaguna
-            </h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-full">
-                Ruang Serbaguna Balai Kota Semarang menyediakan fasilitas modern untuk berbagai kegiatan, mulai dari
-                pertemuan pemerintahan hingga acara sosial. Dengan lokasi strategis dan kapasitas yang besar, ruang ini
-                menjadi pilihan utama di tengah kota.
-            </p>
-            <a href="/detailNamaRuang"
-                class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                Detail
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d=" M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
-        </div>
+    <div class="mx-16 my-8">
+        <a href="/isiData"
+            class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Pinjam Ruangan
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d=" M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+        </a>
     </div>
 
-    <div
-        class="m-16 flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
-        {{-- class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0"> --}}
-        {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-        <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-            {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-            <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                src="{{ asset('storage/picture/ruangMeeting3.jpg') }}" alt="">
-        </div>
-        <div class="w-full max-w-full ml-4 md:max-w-screen-md">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white max-w-full">
-                Ruang Serbaguna
-            </h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-full">
-                Ruang Serbaguna Balai Kota Semarang menyediakan fasilitas modern untuk berbagai kegiatan, mulai dari
-                pertemuan pemerintahan hingga acara sosial. Dengan lokasi strategis dan kapasitas yang besar, ruang ini
-                menjadi pilihan utama di tengah kota.
-            </p>
-            <a href="/detailNamaRuang"
-                class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                Detail
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d=" M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
-        </div>
-    </div>
 
-    <div
-        class="m-16 flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
-        {{-- class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0"> --}}
-        {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-        <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-            {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-            <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                src="{{ asset('storage/picture/ruangMeeting4.jpg') }}" alt="">
-        </div>
-        <div class="w-full max-w-full ml-4 md:max-w-screen-md">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white max-w-full">
-                Ruang Serbaguna
-            </h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-full">
-                Ruang Serbaguna Balai Kota Semarang menyediakan fasilitas modern untuk berbagai kegiatan, mulai dari
-                pertemuan pemerintahan hingga acara sosial. Dengan lokasi strategis dan kapasitas yang besar, ruang ini
-                menjadi pilihan utama di tengah kota.
-            </p>
-            <a href="/detailNamaRuang"
-                class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                Detail
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d=" M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
-        </div>
-    </div>
-
-    <div
-        class="m-16 flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
-        {{-- class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0"> --}}
-        {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-        <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-            {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-            <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                src="{{ asset('storage/picture/ruangMeeting4.jpg') }}" alt="">
-        </div>
-        <div class="w-full max-w-full ml-4 md:max-w-screen-md">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white max-w-full">
-                Ruang Serbaguna
-            </h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-full">
-                Ruang Serbaguna Balai Kota Semarang menyediakan fasilitas modern untuk berbagai kegiatan, mulai dari
-                pertemuan pemerintahan hingga acara sosial. Dengan lokasi strategis dan kapasitas yang besar, ruang ini
-                menjadi pilihan utama di tengah kota.
-            </p>
-            <a href="/detailNamaRuang"
-                class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                Detail
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d=" M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
-        </div>
-    </div>
+</body>
 
 </html>

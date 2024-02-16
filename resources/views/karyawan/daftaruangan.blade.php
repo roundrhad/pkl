@@ -1,11 +1,9 @@
-<!DOCTYPE html>
 <html lang="en" class="dark">
 
 <head>
     <title>Diskominfo Semarang</title>
-    <link rel="icon" href="{{ asset('storage/picture/logo.png') }}">
+    <link rel="web icon" href="{{ asset('storage/picture/logo.png') }}">
     <link rel="stylesheet" href="https://flowbite-admin-dashboard.vercel.app//app.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -131,7 +129,7 @@
 
     <!-- Breadcrumb -->
     <nav
-        class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-lg">
+        class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-sm">
         {{-- max-w-sm : kecil,max-w-md, max-w-lg, max-w-xs, max-w-xxs --}}
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center">
@@ -152,33 +150,9 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 9 4-4-4-4" />
                     </svg>
-                    <a href="/daftarRuangan"
+                    <a href="/detailRuangan"
                         class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Daftar
                         Ruangan</a>
-                </div>
-            </li>
-            <li>
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <a href="/detailNamaRuang"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Detail
-                        Ruangan</a>
-                </div>
-            </li>
-            <li>
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <a href="/isiData"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Isi
-                        Data</a>
                 </div>
             </li>
             {{-- <li aria-current="page">
@@ -194,117 +168,29 @@
         </ol>
     </nav>
 
-    <div class="border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mx-16 my-8 p-6">
-        {{-- p-6 : jarak dari border ke dalam isi kotak  --}}
-        <form>
-            <div class="grid gap-6 mb-6">
-                <div>
-                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
-                        Lengkap</label>
-                    <input type="text" id="first_name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Albus Dumbledore" required>
-                </div>
-                <div>
-                    <label for="divisi"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Divisi</label>
-                    <input type="text" id="divisi"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Divisi IT" required>
-                </div>
-                <div>
-                    <label for="ni"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIP</label>
-                    <input type="tel" id="nio"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="123.45.678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
-                </div>
-                <div>
-                    <label for="purpose"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Keperluan
-                        Peminjaman</label>
-                    <input type="text" id="purpose"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Melaksanakan Seminar Kesehatan Semarang Maju" required>
-                </div>
-
-                <div>
-                    <label for="datepicker"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal
-                        Peminjaman</label>
-                    <div class="relative max-w-sm">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                            </svg>
-                        </div>
-                        <input type="text" id="datepicker"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Pilih Tanggal">
-                    </div>
-                </div>
-
-                {{-- <div>
-                    <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Website
-                        URL</label>
-                    <input type="url" id="website"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="flowbite.com" required>
-                </div>
-                <div>
-                    <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Unique
-                        visitors (per month)</label>
-                    <input type="number" id="visitors"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="" required>
-                </div>
+    {{-- Content --}}
+    @foreach ($ruangans as $ruangan)
+        <div
+            class="m-16 flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
+            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
+                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
+                    src="{{ asset('storage/picture/ruangMeeting.jpg') }}" alt="">
             </div>
-            <div class="mb-6">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email
-                    address</label>
-                <input type="email" id="email"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="john.doe@company.com" required>
+            <div class="w-full max-w-full ml-4 md:max-w-screen-md">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white max-w-full">
+                    {{ $ruangan->nama }}</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-full">{{ $ruangan->deskripsi }}</p>
+                <a href="/lihatDetail?id={{ $ruangan->id }}"
+                    class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
+                    Detail
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d=" M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
             </div>
-            <div class="mb-6">
-                <label for="password"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                <input type="password" id="password"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="•••••••••" required>
-            </div>
-            <div class="mb-6">
-                <label for="confirm_password"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
-                <input type="password" id="confirm_password"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="•••••••••" required>
-            </div> --}}
-                {{-- <div class="flex items-start mb-6">
-                    <div class="flex items-center h-5">
-                        <input id="remember" type="checkbox" value=""
-                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                            required>
-                    </div>
-                    <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Saya setuju dengan<a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and
-                            conditions</a>.</label>
-                </div> --}}
-                <button type="submit"
-                    class="my-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-        </form>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-
-    <!-- Inisialisasi datepicker -->
-    <script>
-        $(function() {
-            $("#datepicker").datepicker();
-        });
-    </script>
-</body>
+        </div>
+    @endforeach
 
 </html>

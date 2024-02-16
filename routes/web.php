@@ -20,38 +20,54 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/', [LoginController::class, 'login'])->name('login.submit');
 
-Route::get('/home', function () {
-    return view('home');
+use App\Http\Controllers\RuanganController;
+
+Route::get('/home', [RuanganController::class, 'index']);
+
+// Route::get('/home', function () {
+//     return view('karyawan.home');
+// });
+
+
+use App\Http\Controllers\LihatDetailController;
+
+Route::get('/lihatDetail', [LihatDetailController::class, 'show'])->name('lihatDetail');
+
+Route::post('/simpan-peminjam', 'App\Http\Controllers\PeminjamanController@store')->name('simpan.peminjam');
+
+// Route::get('/lihatDetail', function () {
+//     return view('karyawan.lihatdetail');
+// });
+// home/lihatDetail
+
+// Route::get('/daftarRuangan', function () {
+//     return view('karyawan.daftaruangan');
+// });
+// /home/lainnya/daftarRuangan
+
+use App\Http\Controllers\DaftarRuanganController;
+
+Route::get('/daftarRuangan', [DaftarRuanganController::class, 'index'])->name('daftarRuangan');
+
+
+Route::get('/editProfile', function () {
+    return view('karyawan.editprofil');
+});
+
+Route::get('/detailNamaRuang', function () {
+    return view('karyawan.detaildaftarR');
 });
 
 Route::get('/detailRuangan', function () {
-    return view('detailruangan');
+    return view('karyawan.detailruangan');
 });
 // home/ruangTerpakai/detailRuangan
 
 Route::get('/isiData', function () {
-    return view('formdata');
-});
-
-Route::get('/lihatDetail', function () {
-    return view('lihatdetail');
-});
-// home/lihatDetail
-
-Route::get('/daftarRuangan', function () {
-    return view('daftaruangan');
-});
-// /home/lainnya/daftarRuangan
-
-Route::get('/editProfile', function () {
-    return view('editprofil');
-});
-
-Route::get('/detailNamaRuang', function () {
-    return view('detaildaftarR');
+    return view('karyawan.formdata');
 });
 
 // Route::get('/detail', function () {
