@@ -67,7 +67,7 @@
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
                     </div>
                     <ul class="py-2" aria-labelledby="user-menu-button">
-                        
+
                         <li>
                             <a href="/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
@@ -117,6 +117,66 @@
         </div>
     </nav>
 
+    {{-- CAROUSEL --}}
+
+    <div id="animation-carousel" class="relative w-full" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/storage/picture/background.png"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/storage/picture/background2.png"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <img src="/storage/picture/background3.png"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/storage/picture/background4.png"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/storage/picture/background5.png"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
     <div class="p-4 mx-auto mt-8 items-center">
         <div class="flex justify-center flex-wrap gap-4">
             <!-- Kotak 1 -->
@@ -135,6 +195,14 @@
                 <p class="font-normal text-gray-700 dark:text-gray-400">{{ $ruangTerpakai }}</p>
             </a>
 
+            <!-- Kotak 4 -->
+            <a href="/detailRuangan"
+                class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Tidak Terpakai
+                </h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{{ $ruangTidakTerpakai }}</p>
+            </a>
+
             <!-- Kotak 3 -->
             <a href="/detailRuangan"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
@@ -143,6 +211,21 @@
                 <p class="font-normal text-gray-700 dark:text-gray-400">{{ $ruangPerbaikan }}</p>
             </a>
         </div>
+    </div>
+
+    <div class="ml-16 mr-16 mt-16 flex justify-center p-4 rounded-lg dark:border-gray-700 flex flex-wrap gap-4">
+        @foreach ($tempat->take(5) as $item)
+            {{-- Card 1 --}}
+            <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-96 h-96">
+                <img class="rounded-t-lg object-cover w-full h-72"
+                    src="{{ asset('storage/picture/multipurposeHall.jpg') }}" alt="" />
+                <div class="p-5">
+                    <h5
+                        class="flex justify-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {{ $item->nama }}</h5>
+                </div>
+            </div>
+        @endforeach
     </div>
 
 </body>

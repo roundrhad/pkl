@@ -160,44 +160,44 @@
 
     <div class="mx-16">
         <!-- Looping through the data -->
-        @foreach ($peminjam as $peminjamanTerpakai)
+        @foreach ($ruangPerbaikan as $tempat)
             <a href="#"
                 class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
                 <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
                     <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                        src="{{ asset('storage/picture/' . $peminjamanTerpakai->foto) }}" alt="">
+                        src="{{ asset('storage/picture/multipurposeHall.jpg') }}" alt="" />
                 </div>
                 <table class="w-full max-w-full ml-4 md:max-w-screen-md">
                     <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Hari</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->hari }}</td>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Ruang</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->nama }}</td>
                     </tr>
                     <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->tanggal }}</td>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Kapasitas</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->kapasitas }}</td>
                     </tr>
                     <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Mulai</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">
-                            {{ $peminjamanTerpakai->mulaijampeminjaman }}</td>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Gedung</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->gedung }}</td>
                     </tr>
                     <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Selesai</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">
-                            {{ $peminjamanTerpakai->selesaijampeminjaman }}
-                        </td>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Lantai</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->lantai }}</td>
                     </tr>
                     <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Peminjam</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->namalengkap }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->nip }}</td>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Alamat</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->alamat }}</td>
                     </tr>
                     <tr>
                         <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->status }}</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">
+                            {{ $tempat->status }}</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Deskripsi</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">
+                            {{ $tempat->deskripsi }}
+                        </td>
                     </tr>
                 </table>
             </a>

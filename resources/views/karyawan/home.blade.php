@@ -101,13 +101,13 @@
                     </li>
                     <li>
                         <a href="/isiData"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjam</a>
-                    </li>
-                    {{-- <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Form</a>
                     </li>
                     <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjaman</a>
+                    </li>
+                    {{-- <li>
                         <a href="#"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                     </li> --}}
@@ -180,7 +180,7 @@
     <div class="p-4 mx-auto mt-8 items-center">
         <div class="flex justify-center flex-wrap gap-4">
             <!-- Kotak 1 -->
-            <a href="/detailRuangan"
+            <a href="/ruang-terpakai"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 {{-- flex flex-col items-center justify-center : supaya tulisan ditengah --}}
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Terpakai</h5>
@@ -188,7 +188,7 @@
             </a>
 
             <!-- Kotak 2 -->
-            <a href="/detailRuangan"
+            <a href="/ruang-t-terpakai"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Tidak Terpakai
                 </h5>
@@ -196,7 +196,7 @@
             </a>
 
             <!-- Kotak 3 -->
-            <a href="/detailRuangan"
+            <a href="/ruang-dlm-perbaikan"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Dalam Perbaikan
                 </h5>

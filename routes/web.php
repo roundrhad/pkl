@@ -70,16 +70,20 @@ Route::get('/detailNamaRuang', function () {
 
 // home/ruangTerpakai/detailRuangan
 
-// Route::get('/isiData', function () {
-//     return view('karyawan.formdata');
-// });
+Route::get('/isiData', function () {
+    return view('karyawan.isidata');
+});
 
 // Route::get('/detail', function () {
 //     return view('detailhome');
 // });
 
 use App\Http\Controllers\PeminjamanController;
+// Route::post('/isiData', [PeminjamanController::class, 'isiData'])->name('isiData');
+// Route::post('/isiData', [PeminjamanController::class, 'isiData'])->name('isiData');
 
-Route::post('/isiData', [PeminjamanController::class, 'isiData'])->name('isiData');
+// Route::get('/detailRuangan', [PeminjamanController::class, 'detailRuangan'])->name('detailRuangan');
 
-Route::get('/detailRuangan', [PeminjamanController::class, 'detailRuangan'])->name('detailRuangan');
+Route::get('/ruang-terpakai', [PeminjamanController::class, 'ruangTerpakai'])->name('ruang-terpakai');
+Route::get('/ruang-t-terpakai', [PeminjamanController::class, 'ruangTidakTerpakai'])->name('ruang-t-terpakai');
+Route::get('/ruang-dlm-perbaikan', [PeminjamanController::class, 'ruangPerbaikan'])->name('ruang-dlm-perbaikan');

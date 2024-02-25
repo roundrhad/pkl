@@ -4,18 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Peminjaman;
+use App\Models\Tempat;
+
 
 class PeminjamanController extends Controller
 {
     // Metode untuk menampilkan detail ruangan dengan data peminjaman yang terpakai
-    public function detailRuangan(){
-    // Ambil data peminjaman dengan status 'Terpakai'
-    $peminjamanTerpakai = Peminjaman::where('status', 'Terpakai')->get();
-    
-    // Kirim data ke view 'detailruangan'
-    return view('karyawan.detailruangan', ['peminjam' => $peminjamanTerpakai]);
+    public function ruangTerpakai(){
+        $peminjamanTerpakai = Peminjaman::where('status', 'Terpakai')->get();
+        return view('karyawan.rterpakai', compact('peminjamanTerpakai'));
     }
 
+    public function ruangTidakTerpakai(){
+        $ruangTidakTerpakai = Tempat::where('status', 'Tidak Terpakai')->get();
+        return view('karyawan.rtdkterpakai', compact('ruangTidakTerpakai'));
+    }
+
+    public function ruangPerbaikan(){
+        $ruangPerbaikan = Tempat::where('status', 'Perbaikan')->get();
+        return view('karyawan.rdlmperbaikan', compact('ruangPerbaikan'));
+    }
+    
     public function isiData(Request $request){
     // Validasi data yang dikirim dari formulir
     $validatedData = $request->validate([
@@ -33,10 +42,10 @@ class PeminjamanController extends Controller
     Peminjaman::create($validatedData);
 
     // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
-    return redirect()->route('karyawan.formdata');
+        return redirect()->route('karyawan.formdata')->with('success', 'Data has been saved successfully.');
     }
 
-
+    
     // Metode untuk menampilkan halaman utama (jika dibutuhkan)
     // public function index()
     // {

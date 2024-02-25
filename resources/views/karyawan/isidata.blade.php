@@ -185,8 +185,7 @@
 
     <div class="border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mx-16 my-8 p-6">
         {{-- p-6 : jarak dari border ke dalam isi kotak  --}}
-        <form action="{{ route('isiData') }}" method="POST">
-            @csrf
+        <form>
             <div class="grid gap-6 mb-6">
                 <div>
                     <label for="namaruang" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
@@ -216,7 +215,6 @@
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="123.45.678" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}" required>
                 </div>
-
                 <div>
                     <label for="purpose"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Keperluan
@@ -225,12 +223,11 @@
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Melaksanakan Seminar Kesehatan Semarang Maju" required>
                 </div>
-
                 <div>
                     <label for="datepicker"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal
                         Peminjaman</label>
-                    <div class="relative max-w-sm">
+                    <div class="relative max-w-full">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -249,7 +246,7 @@
                         <label for="start_time"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mulai Jam
                             Peminjaman</label>
-                        <div class="relative max-w-sm">
+                        <div class="relative relative w-full">
                             <input type="time" id="start_time" name="mulai_jam_peminjaman"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
@@ -266,8 +263,8 @@
                         <label for="end_time"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selesai Jam
                             Peminjaman</label>
-                        <div class="relative max-w-sm">
-                            <input type="time" id="end_time" name="selesai_jam_peminjaman"
+                        <div class="relative relative w-full">
+                            <input type="time" id="start_time" name="selesai_jam_peminjaman"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -279,13 +276,14 @@
                         </div>
                     </div>
                 </div>
-
-                <button
-                    type="submit"class="my- text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-
+                <button type="button"
+                    class="relative max-w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </div>
+
         </form>
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
@@ -293,11 +291,11 @@
 
 
     <!-- Inisialisasi datepicker -->
-    <script>
+    {{-- <script>
         $(function() {
             $("#datepicker").datepicker();
         });
-    </script>
+    </script> --}}
 </body>
 
 </html>
