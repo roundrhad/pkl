@@ -21,4 +21,20 @@ class RuanganController extends Controller
             'tempat' => $tempat, // Mengirimkan data ruangan ke view
         ]);
     }
+
+    public function index2()
+    {
+        $tempat = Tempat::all(); // Mengambil semua data ruangan
+        $id = Tempat::count(); // Menghitung jumlah ruangan berdasarkan id
+        $ruangTerpakai = Tempat::where('status', 'Terpakai')->count(); // Menghitung jumlah ruangan yang terpakai
+        $ruangPerbaikan = Tempat::where('status', 'Perbaikan')->count(); // Menghitung jumlah ruangan yang dalam perbaikan
+    
+        return view('admin.home', [
+            'ruangTerpakai' => $ruangTerpakai,
+            'id' => $id,
+            'ruangPerbaikan' => $ruangPerbaikan,
+            'tempat' => $tempat, // Mengirimkan data ruangan ke view
+        ]);
+    }
+    
 }

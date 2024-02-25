@@ -19,7 +19,7 @@
             <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 {{-- darkmode --}}
                 <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button"
-                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2">
                     <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -55,8 +55,9 @@
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom">
                     <span class="sr-only">Open user menu</span>
-                    <img class="w-12 h-12 rounded-full" src="storage/picture/albus.jpg" alt="user photo">
+                    <img class="w-12 h-12 rounded-full" src="/storage/picture/harry.jpg" alt="user photo">
                 </button>
+
                 <!-- Dropdown menu -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown">
@@ -66,20 +67,9 @@
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
                     </div>
                     <ul class="py-2" aria-labelledby="user-menu-button">
+
                         <li>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-                        </li>
-                        <li>
-                            <a href="#"
+                            <a href="/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                 out</a>
                         </li>
@@ -87,7 +77,7 @@
                 </div>
 
                 <button data-collapse-toggle="navbar-user" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400  dark:focus:ring-gray-600"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-user" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -111,7 +101,7 @@
                     </li>
                     <li>
                         <a href="/isiData"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjaman</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjam</a>
                     </li>
                     {{-- <li>
                         <a href="#"
@@ -169,171 +159,49 @@
     </nav>
 
     <div class="mx-16">
-        <h6 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Senin, 2 Februari 2024</h6>
-        <a href="#"
-            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
-            {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-                {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                    src="{{ asset('storage/picture/ruangMeeting.jpg') }}" alt="">
-            </div>
-            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Hari</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Senin</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">2 Februari 2024</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Mulai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">08:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Selesai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">10:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Peminjam</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Ariana Grande</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">07032003</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Terpakai</td>
-                </tr>
-            </table>
-        </a>
-        <a href="#"
-            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 ">
-            {{-- dark:hover:bg-gray-700 : supaya kalau ada kursor dia ada shadownya gitu --}}
-            {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-                {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                    src="{{ asset('storage/picture/ruangMeeting2.jpg') }}" alt="">
-            </div>
-            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Hari</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Senin</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">2 Februari 2024</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Mulai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">13:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Selesai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">15:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Peminjam</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Ariana Grande</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">07032003</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Terpakai</td>
-                </tr>
-            </table>
-        </a>
+        <!-- Looping through the data -->
+        @foreach ($peminjam as $peminjamanTerpakai)
+            <a href="#"
+                class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
+                <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
+                    <img class="object-cover w-full h-full object-fit-contain rounded-lg"
+                        src="{{ asset('storage/picture/' . $peminjamanTerpakai->foto) }}" alt="">
+                </div>
+                <table class="w-full max-w-full ml-4 md:max-w-screen-md">
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Hari</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->hari }}</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->tanggal }}</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Mulai</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">
+                            {{ $peminjamanTerpakai->mulaijampeminjaman }}</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Selesai</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">
+                            {{ $peminjamanTerpakai->selesaijampeminjaman }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Peminjam</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->namalengkap }}</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->nip }}</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjamanTerpakai->status }}</td>
+                    </tr>
+                </table>
+            </a>
+        @endforeach
     </div>
-
-    <div class="m-16">
-        <h6 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Selasa, 3 Februari 2024</h6>
-        <a href="#"
-            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 ">
-            {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-                {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                    src="{{ asset('storage/picture/ruangMeeting3.jpg') }}" alt="">
-            </div>
-            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Hari</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Selasa</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">3 Februari 2024</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Mulai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">08:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Selesai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">10:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Peminjam</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Ariana Grande</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">07032003</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Terpakai</td>
-                </tr>
-            </table>
-        </a>
-        <a href="#"
-            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
-            {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-                {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                    src="{{ asset('storage/picture/ruangMeeting4.jpg') }}" alt="">
-            </div>
-            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Hari</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Selasa</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">3 Februari 2024</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Mulai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">13:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Selesai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">15:00</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Peminjam</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Ariana Grande</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">07032003</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Terpakai</td>
-                </tr>
-            </table>
-        </a>
-
-    </div>
-
-
 
 </html>

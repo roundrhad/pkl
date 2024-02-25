@@ -26,6 +26,7 @@ Route::post('/', [LoginController::class, 'login'])->name('login.submit');
 use App\Http\Controllers\RuanganController;
 
 Route::get('/home', [RuanganController::class, 'index']);
+Route::get('/admin/home', [RuanganController::class, 'index2']);
 
 // Route::get('/home', function () {
 //     return view('karyawan.home');
@@ -36,7 +37,11 @@ use App\Http\Controllers\LihatDetailController;
 
 Route::get('/lihatDetail', [LihatDetailController::class, 'show'])->name('lihatDetail');
 
-Route::post('/simpan-peminjam', 'App\Http\Controllers\PeminjamanController@store')->name('simpan.peminjam');
+// File: routes/web.php
+
+// use App\Http\Controllers\PeminjamanController;
+
+// Route::post('/isiData', [PeminjamanController::class, 'simpanPeminjam'])->name('isiData');
 
 // Route::get('/lihatDetail', function () {
 //     return view('karyawan.lihatdetail');
@@ -61,15 +66,20 @@ Route::get('/detailNamaRuang', function () {
     return view('karyawan.detaildaftarR');
 });
 
-Route::get('/detailRuangan', function () {
-    return view('karyawan.detailruangan');
-});
+
+
 // home/ruangTerpakai/detailRuangan
 
-Route::get('/isiData', function () {
-    return view('karyawan.formdata');
-});
+// Route::get('/isiData', function () {
+//     return view('karyawan.formdata');
+// });
 
 // Route::get('/detail', function () {
 //     return view('detailhome');
 // });
+
+use App\Http\Controllers\PeminjamanController;
+
+Route::post('/isiData', [PeminjamanController::class, 'isiData'])->name('isiData');
+
+Route::get('/detailRuangan', [PeminjamanController::class, 'detailRuangan'])->name('detailRuangan');

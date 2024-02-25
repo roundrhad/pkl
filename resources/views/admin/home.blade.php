@@ -67,7 +67,7 @@
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
                     </div>
                     <ul class="py-2" aria-labelledby="user-menu-button">
-
+                        
                         <li>
                             <a href="/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
@@ -117,112 +117,34 @@
         </div>
     </nav>
 
-    <!-- Breadcrumb -->
-    <nav
-        class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-sm">
-        {{-- max-w-sm : kecil,max-w-md, max-w-lg, max-w-xs, max-w-xxs --}}
-        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <li class="inline-flex items-center">
-                <a href="/home"
-                    class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                    <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
-                    </svg>
-                    Home
-                </a>
-            </li>
-            <li>
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <a href="/daftarRuangan"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Daftar
-                        Ruangan</a>
-                </div>
-            </li>
-            <li>
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <a href="/detailNamaRuang"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Detail
-                        Ruangan</a>
-                </div>
-            </li>
-            {{-- <li aria-current="page">
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180  w-3 h-3 mx-1 text-gray-400" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Flowbite</span>
-                </div>
-            </li> --}}
-        </ol>
-    </nav>
+    <div class="p-4 mx-auto mt-8 items-center">
+        <div class="flex justify-center flex-wrap gap-4">
+            <!-- Kotak 1 -->
+            <a href="/detailRuangan"
+                class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Jumlah Ruangan
+                </h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{{ $id }}</p>
+            </a>
 
-    {{-- Content --}}
-    <div class="mx-16 my-8">
-        <a href="#"
-            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 ">
-            {{-- md:max-w-7xl : lebar kotak / cardnya --}}
-            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-                {{-- Container untuk gambar, h-72 : ukuran tinggi foto --}}
-                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                    src="{{ asset('storage/picture/ruangMeeting.jpg') }}" alt="">
-            </div>
-            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Ruangan</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Ruang Serbaguna</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Kapasitas</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">30 orang</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Gedung</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">A</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Lantai</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">3</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Alamat</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Jl. Pemuda No.148, Sekayu, Semarang</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Toilet Terdekat</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">3</td>
-                </tr>
-                <tr>
-                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tempat Ibadah Terdekat</td>
-                    <td class="p-2 text-white dark:text-white max-w-xs">Mushola</td>
-                </tr>
-            </table>
-        </a>
+            <!-- Kotak 2 -->
+            <a href="/detailRuangan"
+                class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
+                {{-- flex flex-col items-center justify-center : supaya tulisan ditengah --}}
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Terpakai</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{{ $ruangTerpakai }}</p>
+            </a>
+
+            <!-- Kotak 3 -->
+            <a href="/detailRuangan"
+                class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Dalam Perbaikan
+                </h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{{ $ruangPerbaikan }}</p>
+            </a>
+        </div>
     </div>
-    <div class="mx-16 my-8">
-        <a href="/isiData"
-            class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Pinjam
-            Ruangan
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d=" M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-        </a>
-    </div>
+
 </body>
 
 </html>
