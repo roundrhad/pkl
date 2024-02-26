@@ -15,14 +15,34 @@ class PeminjamanController extends Controller
         return view('karyawan.rterpakai', compact('peminjamanTerpakai'));
     }
 
+    public function ruangTerpakai2(){
+        $peminjamanTerpakai2 = Peminjaman::where('status', 'Terpakai')->get();
+        return view('admin.rterpakai', compact('peminjamanTerpakai2'));
+    }
+
+    public function ruangTerpakai3(){
+        $peminjamanTerpakai3 = Peminjaman::where('status', 'Terpakai')->get();
+        return view('admin.peminjam', compact('peminjamanTerpakai3'));
+    }
+
     public function ruangTidakTerpakai(){
         $ruangTidakTerpakai = Tempat::where('status', 'Tidak Terpakai')->get();
         return view('karyawan.rtdkterpakai', compact('ruangTidakTerpakai'));
     }
 
+    public function ruangTidakTerpakai2(){
+        $ruangTidakTerpakai2 = Tempat::where('status', 'Tidak Terpakai')->get();
+        return view('admin.rtdkterpakai', compact('ruangTidakTerpakai2'));
+    }
+
     public function ruangPerbaikan(){
         $ruangPerbaikan = Tempat::where('status', 'Perbaikan')->get();
         return view('karyawan.rdlmperbaikan', compact('ruangPerbaikan'));
+    }
+
+    public function ruangPerbaikan2(){
+        $ruangPerbaikan2 = Tempat::where('status', 'Perbaikan')->get();
+        return view('admin.rdlmperbaikan', compact('ruangPerbaikan2'));
     }
     
     public function isiData(Request $request){

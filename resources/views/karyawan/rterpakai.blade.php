@@ -61,11 +61,11 @@
                 <!-- Dropdown menu -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown">
-                    <div class="px-4 py-3">
+                    {{-- <div class="px-4 py-3">
                         <span class="block text-sm text-gray-900 dark:text-white">Albus Percival Wulfric Brian
                             Dumbledore</span>
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
-                    </div>
+                    </div> --}}
                     <ul class="py-2" aria-labelledby="user-menu-button">
 
                         <li>
@@ -186,7 +186,7 @@
                     </tr>
                     <tr>
                         <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjaman->tanggal }}</td>
+                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjaman->tanggalpeminjaman }}</td>
                     </tr>
                     <tr>
                         <td class="p-2 font-bold text-white dark:text-white max-w-xs">Jam Mulai</td>

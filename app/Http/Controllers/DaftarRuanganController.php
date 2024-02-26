@@ -12,4 +12,10 @@ class DaftarRuanganController extends Controller
         $ruangans = Tempat::all(); // Ambil semua data ruangan
         return view('karyawan.daftaruangan', compact('ruangans'));
     }
+
+    public function index2()
+    {
+        $ruangans = Tempat::all(); // Ambil semua data ruangan
+        return view('admin.jmlruangan', compact('ruangans'));
+    }
 }

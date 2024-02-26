@@ -3,6 +3,7 @@
 <head>
     <title>Diskominfo Semarang</title>
     <link rel="web icon" href="{{ asset('storage/picture/logo.png') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://flowbite-admin-dashboard.vercel.app//app.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -91,16 +92,16 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="/home" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                        <a href="/admin/home" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                             aria-current="page">Home</a> --}}
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
                     </li>
                     <li>
-                        <a href="/daftarRuangan"
+                        <a href="/jmlRuangan"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ruangan</a>
                     </li>
                     <li>
-                        <a href="/isiData"
+                        <a href="/peminjam"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjam</a>
                     </li>
                     {{-- <li>
@@ -123,7 +124,7 @@
         {{-- max-w-sm : kecil,max-w-md, max-w-lg, max-w-xs, max-w-xxs --}}
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center">
-                <a href="/home"
+                <a href="/admin/home"
                     class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                     <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor" viewBox="0 0 20 20">
@@ -140,7 +141,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 9 4-4-4-4" />
                     </svg>
-                    <a href="/detailRuangan"
+                    <a href="/ruangTerpakai"
                         class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Detail
                         Ruangan</a>
                 </div>
@@ -158,50 +159,88 @@
         </ol>
     </nav>
 
-    <div class="mx-16">
-        <!-- Looping through the data -->
-        @foreach ($ruangTidakTerpakai as $tempat)
-            <a href="#"
-                class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
-                <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-                    <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                        src="{{ asset('storage/picture/multipurposeHall.jpg') }}" alt="" />
-                </div>
-                <table class="w-full max-w-full ml-4 md:max-w-screen-md">
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Ruang</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->nama }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Kapasitas</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->kapasitas }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Gedung</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->gedung }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Lantai</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->lantai }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Alamat</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->alamat }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">
-                            {{ $tempat->status }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Deskripsi</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">
-                            {{ $tempat->deskripsi }}
+    <div class="mt-8 ml-16 mr-16 relative overflow-x-auto shadow-md sm:rounded-lg">
+        <input type="text" id="table-search-users"
+            class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search for users">
+        <table class="mt-8 w-full text-md text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Nama Ruang
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Nama Peminjam
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        NIP
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Tanggal
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Jam Mulai
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Jam Selesai
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Status
+                    </th>
+                    {{-- <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Edit</span>
+                    </th> --}}
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($peminjamanTerpakai2 as $peminjaman)
+                    <tr
+                        class="data-row bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ $peminjaman->namaruang }}
                         </td>
+                        <td class="px-6 py-4">
+                            {{ $peminjaman->namalengkap }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $peminjaman->nip }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $peminjaman->tanggalpeminjaman }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $peminjaman->mulaijampeminjaman }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $peminjaman->selesaijampeminjaman }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $peminjaman->status }}
+                        </td>
+                        {{-- <td class="px-6 py-4 text-right">
+                            <a href="#"
+                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td> --}}
                     </tr>
-                </table>
-            </a>
-        @endforeach
+                @endforeach
+            </tbody>
+        </table>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('table-search-users');
+            const tableRows = document.querySelectorAll('.data-row');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = searchInput.value.toLowerCase();
+
+                tableRows.forEach(row => {
+                    const rowData = row.textContent.toLowerCase();
+                    row.style.display = rowData.includes(searchTerm) ? '' : 'none';
+                });
+            });
+        });
+    </script>
 
 </html>

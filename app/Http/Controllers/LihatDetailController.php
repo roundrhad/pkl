@@ -15,4 +15,13 @@ class LihatDetailController extends Controller
         return view('karyawan.lihatdetail', ['tempat' => $tempat]);
 
     }
+
+    public function show2(Request $request)
+    {
+        // Ambil ID dari query string
+        $id = $request->query('id');
+        $tempat = Tempat::findOrFail($id);
+        return view('admin.lihatdetail', ['tempat' => $tempat]);
+
+    }
 }

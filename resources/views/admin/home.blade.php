@@ -61,11 +61,11 @@
                 <!-- Dropdown menu -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown">
-                    <div class="px-4 py-3">
+                    {{-- <div class="px-4 py-3">
                         <span class="block text-sm text-gray-900 dark:text-white">Albus Percival Wulfric Brian
                             Dumbledore</span>
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
-                    </div>
+                    </div> --}}
                     <ul class="py-2" aria-labelledby="user-menu-button">
 
                         <li>
@@ -91,16 +91,16 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="/home" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                        <a href="/admin/home" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                             aria-current="page">Home</a> --}}
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
                     </li>
                     <li>
-                        <a href="/daftarRuangan"
+                        <a href="/jmlRuangan"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ruangan</a>
                     </li>
                     <li>
-                        <a href="/isiData"
+                        <a href="/peminjam"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjam</a>
                     </li>
                     {{-- <li>
@@ -180,7 +180,7 @@
     <div class="p-4 mx-auto mt-8 items-center">
         <div class="flex justify-center flex-wrap gap-4">
             <!-- Kotak 1 -->
-            <a href="/detailRuangan"
+            <a href="/jmlRuangan"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Jumlah Ruangan
                 </h5>
@@ -188,7 +188,7 @@
             </a>
 
             <!-- Kotak 2 -->
-            <a href="/detailRuangan"
+            <a href="/ruangTerpakai"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 {{-- flex flex-col items-center justify-center : supaya tulisan ditengah --}}
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Terpakai</h5>
@@ -196,7 +196,7 @@
             </a>
 
             <!-- Kotak 4 -->
-            <a href="/detailRuangan"
+            <a href="/ruangTidakTerpakai"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Tidak Terpakai
                 </h5>
@@ -204,7 +204,7 @@
             </a>
 
             <!-- Kotak 3 -->
-            <a href="/detailRuangan"
+            <a href="/ruangDlmPerbaikan"
                 class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full sm:w-1/3 flex flex-col items-center justify-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ruang Dalam Perbaikan
                 </h5>
@@ -216,7 +216,8 @@
     <div class="ml-16 mr-16 mt-16 flex justify-center p-4 rounded-lg dark:border-gray-700 flex flex-wrap gap-4">
         @foreach ($tempat->take(5) as $item)
             {{-- Card 1 --}}
-            <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-96 h-96">
+            <div
+                class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-96 h-96">
                 <img class="rounded-t-lg object-cover w-full h-72"
                     src="{{ asset('storage/picture/multipurposeHall.jpg') }}" alt="" />
                 <div class="p-5">

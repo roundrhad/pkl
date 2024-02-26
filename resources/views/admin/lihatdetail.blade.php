@@ -91,16 +91,16 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="/home" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                        <a href="/admin/home" {{-- class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                             aria-current="page">Home</a> --}}
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
                     </li>
                     <li>
-                        <a href="/daftarRuangan"
+                        <a href="/jmlRuangan"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ruangan</a>
                     </li>
                     <li>
-                        <a href="/isiData"
+                        <a href="/peminjam"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjam</a>
                     </li>
                     {{-- <li>
@@ -119,11 +119,11 @@
 
     <!-- Breadcrumb -->
     <nav
-        class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-sm">
+        class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-md">
         {{-- max-w-sm : kecil,max-w-md, max-w-lg, max-w-xs, max-w-xxs --}}
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center">
-                <a href="/home"
+                <a href="/admin/home"
                     class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                     <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor" viewBox="0 0 20 20">
@@ -140,9 +140,20 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 9 4-4-4-4" />
                     </svg>
+                    <a href="/jmlRuangan"
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Daftar Ruangan</a>
+                </div>
+            </li>
+            <li>
+                <div class="flex items-center">
+                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
                     <a href="/detailRuangan"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Detail
-                        Ruangan</a>
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Lihat
+                        Detail Ruangan</a>
                 </div>
             </li>
             {{-- <li aria-current="page">
@@ -158,50 +169,53 @@
         </ol>
     </nav>
 
+    {{-- Content --}}
+
     <div class="mx-16">
-        <!-- Looping through the data -->
-        @foreach ($ruangTidakTerpakai as $tempat)
-            <a href="#"
-                class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
-                <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
-                    <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                        src="{{ asset('storage/picture/multipurposeHall.jpg') }}" alt="" />
-                </div>
-                <table class="w-full max-w-full ml-4 md:max-w-screen-md">
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Nama Ruang</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->nama }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Kapasitas</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->kapasitas }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Gedung</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->gedung }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Lantai</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->lantai }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Alamat</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->alamat }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Status</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">
-                            {{ $tempat->status }}</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Deskripsi</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">
-                            {{ $tempat->deskripsi }}
-                        </td>
-                    </tr>
-                </table>
-            </a>
-        @endforeach
+        <h6 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{{ $tempat->nama }}</h6>
+        <div
+            class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl dark:border-gray-700 dark:bg-gray-800">
+            <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
+                <img class="object-cover w-full h-full object-fit-contain rounded-lg"
+                    src="{{ asset('storage/picture/ruangMeeting.jpg') }}" alt="">
+            </div>
+            <table class="w-full max-w-full ml-4 md:max-w-screen-md">
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Kapasitas Ruangan</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->kapasitas }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Gedung</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->gedung }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Lantai</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->lantai }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Alamat</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->alamat }}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 font-bold text-white dark:text-white max-w-xs">Deskripsi</td>
+                    <td class="p-2 text-white dark:text-white max-w-xs">{{ $tempat->deskripsi }}</td>
+                </tr>
+            </table>
+        </div>
     </div>
+
+    {{-- <div class="mx-16 my-8">
+        <a href="/isiData"
+            class="ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tambah Ruangan
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d=" M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+        </a>
+    </div> --}}
+
+
+</body>
 
 </html>
