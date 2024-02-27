@@ -44,26 +44,28 @@ class PeminjamanController extends Controller
         $ruangPerbaikan2 = Tempat::where('status', 'Perbaikan')->get();
         return view('admin.rdlmperbaikan', compact('ruangPerbaikan2'));
     }
+
     
-    public function isiData(Request $request){
-    // Validasi data yang dikirim dari formulir
-    $validatedData = $request->validate([
-        'namaruang' => 'required|string',
-        'namalengkap' => 'required|string',
-        'divisi' => 'required|string',
-        'nip' => 'required|string',
-        'keperluan_peminjaman' => 'required|string',
-        'tanggal_peminjaman' => 'required|date',
-        'mulai_jam_peminjaman' => 'required',
-        'selesai_jam_peminjaman' => 'required',
-    ]);
+    
+    // public function isiData(Request $request){
+    // // Validasi data yang dikirim dari formulir
+    // $validatedData = $request->validate([
+    //     'namaruang' => 'required|string',
+    //     'namalengkap' => 'required|string',
+    //     'divisi' => 'required|string',
+    //     'nip' => 'required|string',
+    //     'keperluan_peminjaman' => 'required|string',
+    //     'tanggal_peminjaman' => 'required|date',
+    //     'mulai_jam_peminjaman' => 'required',
+    //     'selesai_jam_peminjaman' => 'required',
+    // ]);
 
-    // Simpan data ke dalam tabel peminjam
-    Peminjaman::create($validatedData);
+    // // Simpan data ke dalam tabel peminjam
+    // Peminjaman::create($validatedData);
 
-    // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
-        return redirect()->route('karyawan.formdata')->with('success', 'Data has been saved successfully.');
-    }
+    // // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
+    //     return redirect()->route('karyawan.formdata')->with('success', 'Data has been saved successfully.');
+    // }
 
     
     // Metode untuk menampilkan halaman utama (jika dibutuhkan)

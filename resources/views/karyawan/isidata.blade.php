@@ -101,7 +101,7 @@
                     </li>
                     <li>
                         <a href="/isiData"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjam</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Form</a>
                     </li>
                     {{-- <li>
                         <a href="#"
@@ -165,7 +165,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 9 4-4-4-4" />
                     </svg>
-                    <a href="/isiData"
+                    <a href="/simpan-peminjam"
                         class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Isi
                         Data</a>
                 </div>
@@ -185,7 +185,9 @@
 
     <div class="border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mx-16 my-8 p-6">
         {{-- p-6 : jarak dari border ke dalam isi kotak  --}}
-        <form>
+        <form action="{{ route('simpan-peminjam') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('POST')
             <div class="grid gap-6 mb-6">
                 <div>
                     <label for="namaruang" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
@@ -213,13 +215,13 @@
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIP</label>
                     <input type="tel" id="nip" name="nip"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="123.45.678" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}" required>
+                        placeholder="123.45.678" required>
                 </div>
                 <div>
                     <label for="purpose"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Keperluan
                         Peminjaman</label>
-                    <input type="text" id="purpose" name="keperluan_peminjaman"
+                    <input type="text" id="purpose" name="keperluan"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Melaksanakan Seminar Kesehatan Semarang Maju" required>
                 </div>
@@ -247,7 +249,7 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mulai Jam
                             Peminjaman</label>
                         <div class="relative relative w-full">
-                            <input type="time" id="start_time" name="mulai_jam_peminjaman"
+                            <input type="time" id="start_time" name="mulaijampeminjaman"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -264,7 +266,7 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selesai Jam
                             Peminjaman</label>
                         <div class="relative relative w-full">
-                            <input type="time" id="start_time" name="selesai_jam_peminjaman"
+                            <input type="time" id="end_time" name="selesaijampeminjaman"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -276,19 +278,18 @@
                         </div>
                     </div>
                 </div>
-                <button type="button"
+
+
+                <button type="submit"
                     class="relative max-w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </div>
 
         </form>
     </div>
 
-
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/datepicker.min.js"></script>
-
 
     <!-- Inisialisasi datepicker -->
     {{-- <script>

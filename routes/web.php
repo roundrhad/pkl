@@ -59,7 +59,7 @@ Route::post('/', [LoginController::class, 'login'])->name('login.submit');
 use App\Http\Controllers\LihatDetailController;
 
 Route::get('/lihatDetail', [LihatDetailController::class, 'show'])->name('lihatDetail');
-Route::get('/lihatDetail', [LihatDetailController::class, 'show2'])->name('lihatDetail');
+Route::get('/lihat-Detail', [LihatDetailController::class, 'show2'])->name('lihat-Detail');
 
 // File: routes/web.php
 
@@ -96,14 +96,11 @@ Route::get('/peminjam', function () {
 
 // home/ruangTerpakai/detailRuangan
 
-Route::get('/isiData', function () {
-    return view('karyawan.isidata');
-});
+
 
 Route::get('/tambahRuangan', function () {
     return view('admin.tambahruangan');
 });
-
 
 // Route::get('/detail', function () {
 //     return view('detailhome');
@@ -113,8 +110,14 @@ use App\Http\Controllers\PeminjamanController;
 // Route::post('/isiData', [PeminjamanController::class, 'isiData'])->name('isiData');
 // Route::post('/isiData', [PeminjamanController::class, 'isiData'])->name('isiData');
 
-// Route::get('/detailRuangan', [PeminjamanController::class, 'detailRuangan'])->name('detailRuangan');
+use App\Http\Controllers\FormController;
+Route::post('/simpan-peminjam', [FormController::class, 'store'])->name('simpan-peminjam');
 
+Route::get('/isiData', function () {
+    return view('karyawan.isidata');
+});
+
+// Route::get('/detailRuangan', [PeminjamanController::class, 'detailRuangan'])->name('detailRuangan');
 Route::get('/ruang-terpakai', [PeminjamanController::class, 'ruangTerpakai'])->name('ruang-terpakai');
 Route::get('/ruangTerpakai', [PeminjamanController::class, 'ruangTerpakai2'])->name('ruangTerpakai');
 Route::get('/peminjam', [PeminjamanController::class, 'ruangTerpakai3'])->name('ruangTerpakai');

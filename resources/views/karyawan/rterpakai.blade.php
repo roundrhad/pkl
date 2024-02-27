@@ -101,7 +101,7 @@
                     </li>
                     <li>
                         <a href="/isiData"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Peminjam</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Form</a>
                     </li>
                     {{-- <li>
                         <a href="#"
@@ -180,10 +180,7 @@
                         <td class="p-2 font-bold text-white dark:text-white max-w-xs">NIP</td>
                         <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjaman->nip }}</td>
                     </tr>
-                    <tr>
-                        <td class="p-2 font-bold text-white dark:text-white max-w-xs">Hari</td>
-                        <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjaman->hari }}</td>
-                    </tr>
+
                     <tr>
                         <td class="p-2 font-bold text-white dark:text-white max-w-xs">Tanggal</td>
                         <td class="p-2 text-white dark:text-white max-w-xs">{{ $peminjaman->tanggalpeminjaman }}</td>
