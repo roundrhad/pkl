@@ -8,20 +8,23 @@ use Illuminate\Http\Request;
 class LihatDetailController extends Controller
 {
     public function show(Request $request)
-    {
-        // Ambil ID dari query string
-        $id = $request->query('id');
-        $tempat = Tempat::findOrFail($id);
-        return view('karyawan.lihatdetail', ['tempat' => $tempat]);
+{
+    // Ambil ID dari query string
+    $id = $request->query('id');
+    
+    // Cari tempat berdasarkan ID
+    $tempat = Tempat::findOrFail($id);
 
-    }
+    // Kirim variabel $tempat ke view
+    return view('karyawan.lihatdetail', ['tempat' => $tempat]);
+}
 
-    public function show2(Request $request)
-    {
-        // Ambil ID dari query string
-        $id = $request->query('id');
-        $tempat = Tempat::findOrFail($id);
-        return view('admin.lihatdetail', ['tempat' => $tempat]);
+    // public function show2(Request $request)
+    // {
+    //     // Ambil ID dari query string
+    //     $id = $request->query('id');
+    //     $tempat = Tempat::findOrFail($id);
+    //     return view('admin.lihatdetail', ['tempat' => $tempat]);
 
-    }
+    // }
 }

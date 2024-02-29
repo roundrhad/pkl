@@ -124,7 +124,6 @@
 
         </div>
     </nav>
-
     <!-- Breadcrumb -->
     <nav
         class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-sm">
@@ -141,18 +140,42 @@
                     Home
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <div class="flex items-center">
                     <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 9 4-4-4-4" />
                     </svg>
-                    <a href="/ruangTerpakai"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Detail
-                        Ruangan</a>
+                    <a href="/editProfil"
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
+                        Edit Profile</a>
+                </div>
+            </li> --}}
+            <li class="inline-flex items-center">
+                <div class="flex items-center">
+                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <a href="/profil"
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
+                        Profile</a>
                 </div>
             </li>
+            {{-- <li>
+                <div class="flex items-center">
+                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <a href="/isiData"
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Isi
+                        Data</a>
+                </div>
+            </li> --}}
             {{-- <li aria-current="page">
                 <div class="flex items-center">
                     <svg class="rtl:rotate-180  w-3 h-3 mx-1 text-gray-400" aria-hidden="true"
@@ -166,88 +189,45 @@
         </ol>
     </nav>
 
-    <div class="mt-8 ml-16 mr-16 relative overflow-x-auto shadow-md sm:rounded-lg">
-        <input type="text" id="table-search-users"
-            class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search for users">
-        <table class="mt-8 w-full text-md text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                    <th scope="col" class="px-6 py-3">
-                        Nama Ruang
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Kapasitas
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Gedung
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Lantai
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Alamat
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Status
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Deskripsi
-                    </th>
-                    {{-- <th scope="col" class="px-6 py-3">
-                        <span class="sr-only">Edit</span>
-                    </th> --}}
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($ruangPerbaikan2 as $tempat)
-                    <tr
-                        class="data-row bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $tempat->nama }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $tempat->kapasitas }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $tempat->gedung }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $tempat->lantai }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $tempat->alamat }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $tempat->status }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $tempat->deskripsi }}
-                        </td>
-                        {{-- <td class="px-6 py-4 text-right">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td> --}}
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+    {{-- CONTENT --}}
+    <div
+        class="ml-16 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex justify-end px-4 pt-4">
+            <button id="dropdownButton" data-dropdown-toggle="dropdown"
+                class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+                type="button">
+                <span class="sr-only">Open dropdown</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 16 3">
+                    <path
+                        d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
+                </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdown"
+                class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                <ul class="py-2" aria-labelledby="dropdownButton">
+                    <li>
+                        <a href="/editProfil"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+                    </li>
+                    {{-- <li>
+                        <a href="#"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Export
+                            Data</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                    </li> --}}
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-col items-center pb-10">
+            <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/storage/picture/albus.jpg" alt="User Photo" />
+            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{ $admin->nama }}</h5>
+            <span class="text-sm text-gray-500 dark:text-gray-400">{{ $admin->nip }}</span>
+        </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('table-search-users');
-            const tableRows = document.querySelectorAll('.data-row');
-
-            searchInput.addEventListener('input', function() {
-                const searchTerm = searchInput.value.toLowerCase();
-
-                tableRows.forEach(row => {
-                    const rowData = row.textContent.toLowerCase();
-                    row.style.display = rowData.includes(searchTerm) ? '' : 'none';
-                });
-            });
-        });
-    </script>
 
 </html>

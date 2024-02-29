@@ -3,7 +3,6 @@
 <head>
     <title>Diskominfo Semarang</title>
     <link rel="web icon" href="{{ asset('storage/picture/logo.png') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://flowbite-admin-dashboard.vercel.app//app.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -56,7 +55,7 @@
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom">
                     <span class="sr-only">Open user menu</span>
-                    <img class="w-12 h-12 rounded-full" src="/storage/picture/harry.jpg" alt="user photo">
+                    <img class="w-12 h-12 rounded-full" src="/storage/picture/albus.jpg" alt="user photo">
                 </button>
 
                 <!-- Dropdown menu -->
@@ -68,12 +67,20 @@
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
                     </div> --}}
                     <ul class="py-2" aria-labelledby="user-menu-button">
-
                         <li>
                             <a href="/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                 out</a>
                         </li>
+                        <li>
+                            <a href="/profil"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
+                        </li>
+                        {{-- <li>
+                            <a href="/editProfile"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit
+                                Profile</a>
+                        </li> --}}
                     </ul>
                 </div>
 

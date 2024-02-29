@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class RuanganController extends Controller
 {
+    // public function showGallery()
+    // {
+    //     // Mendapatkan data gambar dari database (misalnya dari model)
+    //     $imageData = ModelName::find($id);
+
+    //     // Mengembalikan view gallery.blade.php dengan data gambar
+    //     return view('gallery', ['imageData' => $imageData]);
+    // }
+
     public function index()
     {
         $tempat = Tempat::all(); // Mengambil semua data ruangan

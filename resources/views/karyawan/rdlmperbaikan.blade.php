@@ -67,12 +67,20 @@
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
                     </div> --}}
                     <ul class="py-2" aria-labelledby="user-menu-button">
-
                         <li>
                             <a href="/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                 out</a>
                         </li>
+                        <li>
+                            <a href="/profile"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
+                        </li>
+                        {{-- <li>
+                            <a href="/editProfile"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit
+                                Profile</a>
+                        </li> --}}
                     </ul>
                 </div>
 
@@ -165,7 +173,7 @@
                 class="flex flex-col items-center bg-white border my-8 border-gray-200 rounded-lg shadow md:flex-row md:max-w-7xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
                 <div class="flex-shrink-0 w-full h-72 md:w-64 lg:w-96 xl:w-120 overflow-hidden">
                     <img class="object-cover w-full h-full object-fit-contain rounded-lg"
-                        src="{{ asset('storage/picture/multipurposeHall.jpg') }}" alt="" />
+                        src="{{ asset($tempat->imgurl) }}" alt="" />
                 </div>
                 <table class="w-full max-w-full ml-4 md:max-w-screen-md">
                     <tr>

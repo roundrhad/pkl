@@ -9,7 +9,7 @@
 
 <body>
     <div class="flex items-center justify-center h-screen"
-        style="background-image: url('storage/picture/gedung.png'); background-size: cover; background-position: center;">
+        style="background-image: url('storage/picture/gedung.jpg'); background-size: cover; background-position: center;">
         <div
             class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-center">

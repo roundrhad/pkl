@@ -55,7 +55,7 @@
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom">
                     <span class="sr-only">Open user menu</span>
-                    <img class="w-12 h-12 rounded-full" src="/storage/picture/harry.jpg" alt="user photo">
+                    <img class="w-12 h-12 rounded-full" src="/storage/picture/albus.jpg" alt="user photo">
                 </button>
 
                 <!-- Dropdown menu -->
@@ -67,12 +67,20 @@
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
                     </div> --}}
                     <ul class="py-2" aria-labelledby="user-menu-button">
-
                         <li>
                             <a href="/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                 out</a>
                         </li>
+                        <li>
+                            <a href="/profil"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
+                        </li>
+                        {{-- <li>
+                            <a href="/editProfile"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit
+                                Profile</a>
+                        </li> --}}
                     </ul>
                 </div>
 
@@ -124,27 +132,27 @@
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/storage/picture/background.png"
+                <img src="/storage/picture/background.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/storage/picture/background2.png"
+                <img src="/storage/picture/background2.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                <img src="/storage/picture/background3.png"
+                <img src="/storage/picture/background3.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/storage/picture/background4.png"
+                <img src="/storage/picture/background4.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 5 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/storage/picture/background5.png"
+                <img src="/storage/picture/background5.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
         </div>
@@ -218,8 +226,7 @@
             {{-- Card 1 --}}
             <div
                 class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-96 h-96">
-                <img class="rounded-t-lg object-cover w-full h-72"
-                    src="{{ asset('storage/picture/multipurposeHall.jpg') }}" alt="" />
+                <img class="rounded-t-lg object-cover w-full h-72" src="{{ asset($item->imgurl) }}" alt="" />
                 <div class="p-5">
                     <h5
                         class="flex justify-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -227,8 +234,18 @@
                 </div>
             </div>
         @endforeach
+        <div class="mx-16 my-48">
+            <a href="/jmlRuangan"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+                <span class="sr-only">Icon description</span>
+            </a>
+        </div>
     </div>
-
 </body>
 
 </html>

@@ -59,7 +59,7 @@ Route::post('/', [LoginController::class, 'login'])->name('login.submit');
 use App\Http\Controllers\LihatDetailController;
 
 Route::get('/lihatDetail', [LihatDetailController::class, 'show'])->name('lihatDetail');
-Route::get('/lihat-Detail', [LihatDetailController::class, 'show2'])->name('lihat-Detail');
+// Route::get('/lihat-Detail', [LihatDetailController::class, 'show2'])->name('lihat-Detail');
 
 // File: routes/web.php
 
@@ -98,6 +98,11 @@ Route::get('/peminjam', function () {
 
 
 
+
+
+use App\Http\Controllers\TambahRuangController;
+Route::post('/simpan-ruangan', [TambahRuangController::class, 'tambahRuang'])->name('simpan-ruangan');
+
 Route::get('/tambahRuangan', function () {
     return view('admin.tambahruangan');
 });
@@ -117,7 +122,30 @@ Route::get('/isiData', function () {
     return view('karyawan.isidata');
 });
 
+// PROFIL KARYAWAN
+use App\Http\Controllers\ProfileController;
+// Route::get('/profile', function () {
+//     return view('karyawan.profile');
+// });
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/editProfile', [ProfileController::class, 'show2'])->name('edit-profile');
+
+Route::get('/profil', [ProfileController::class, 'show3'])->name('profile-show');
+Route::get('/editProfil', [ProfileController::class, 'show4'])->name('edit-profil');
+
+
+Route::put('/update-password', [ProfileController::class, 'updatePassword'])->name('update.password');
+
+// Route::get('/edit-profile', function () {
+//     return view('karyawan.editprofil');
+// });
+
+// Route::get('/profile-edit', [EditProfileController::class, 'showEdit'])->name('showEdit3');
+// Route::post('/profile-edit', [EditProfileController::class, 'update'])->name('update3');
+
+
 // Route::get('/detailRuangan', [PeminjamanController::class, 'detailRuangan'])->name('detailRuangan');
+// RUANGAN
 Route::get('/ruang-terpakai', [PeminjamanController::class, 'ruangTerpakai'])->name('ruang-terpakai');
 Route::get('/ruangTerpakai', [PeminjamanController::class, 'ruangTerpakai2'])->name('ruangTerpakai');
 Route::get('/peminjam', [PeminjamanController::class, 'ruangTerpakai3'])->name('ruangTerpakai');

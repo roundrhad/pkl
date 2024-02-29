@@ -73,10 +73,14 @@
                                 out</a>
                         </li>
                         <li>
+                            <a href="/profile"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
+                        </li>
+                        {{-- <li>
                             <a href="/editProfile"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit
                                 Profile</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
 
@@ -120,7 +124,6 @@
 
         </div>
     </nav>
-
     <!-- Breadcrumb -->
     <nav
         class="flex px-5 py-3 mx-16 my-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 max-w-sm">
@@ -144,10 +147,22 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 9 4-4-4-4" />
                     </svg>
-                    <a href="/editProfil"
+                    <a href="/profile"
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Profil</a>
+                </div>
+            <li>
+                <div class="flex items-center">
+                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <a href="/editProfile"
                         class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Edit
                         Profil</a>
                 </div>
+            </li>
+
             </li>
             {{-- <li>
                 <div class="flex items-center">
@@ -174,72 +189,30 @@
         </ol>
     </nav>
 
-    {{-- form --}}
+
+    <div
+        class="flex flex-col items-center pb-10 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mx-16 my-8 p-6">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/storage/picture/harry.jpg" alt="User Photo" />
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{ $karyawan->nama }}</h5>
+        <span class="text-md text-gray-500 dark:text-gray-400">{{ $karyawan->nip }}</span>
+        <span class="text-md text-gray-500 dark:text-gray-400">{{ $karyawan->username }}</span>
+        <span class="text-md text-gray-500 dark:text-gray-400">{{ $karyawan->divisi }}</span>
+    </div>
 
     <div class="border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mx-16 my-8 p-6">
         {{-- p-6 : jarak dari border ke dalam isi kotak  --}}
-        <form>
-            <div class="grid gap-6 mb-6">
-                <div>
-                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
-                        Lengkap</label>
-                    <input type="text" id="first_name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Ariana" required>
-                </div>
-                <div>
-                    <label for="uname"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                    <input type="uname" id="uname"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="ArianaX" required>
-                </div>
-                {{-- <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last
-                        name</label>
-                    <input type="text" id="last_name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Doe" required>
-                </div> --}}
-                <div>
-                    <label for="divisi"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Divisi</label>
-                    <input type="text" id="divisi"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Divisi IT" required>
-                </div>
-                <div>
-                    <label for="nip"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIP</label>
-                    <input type="tel" id="nip"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="123.45.678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
-                </div>
-                {{-- <div> --}}
-                {{-- <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Website
-                        URL</label>
-                    <input type="url" id="website"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="flowbite.com" required>
-                </div>
-                <div>
-                    <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Unique
-                        visitors (per month)</label>
-                    <input type="number" id="visitors"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="" required>
-                </div> --}}
-            </div>
-            {{-- <div class="mb-6">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                <input type="email" id="email"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="ArianaG" required>
-            </div> --}}
+        <form action="{{ route('update.password') }}" method="POST">
+            @csrf
+            @method('PUT')
+            {{-- 
+            <form action="{{ route('update-profile') }}" method="post" enctype="multipart/new-profile">
+            @csrf
+            @method('POST') 
+            --}}
             <div class="mb-6">
                 <label for="password"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                <input type="password" id="password"
+                <input type="password" name="password" id="password"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="•••••••••" required>
             </div>
@@ -250,20 +223,9 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="•••••••••" required>
             </div>
-            {{-- <div class="flex items-start mb-6">
-                <div class="flex items-center h-5">
-                    <input id="remember" type="checkbox" value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                        required>
-                </div>
-                <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Setuju dengan
-                    <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">syarat dan
-                        ketentuan</a>.</label>
-            </div> --}}
-            <button type="button"
+            <button type="submit"
                 class="relative max-w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
         </form>
-
     </div>
 
 </html>

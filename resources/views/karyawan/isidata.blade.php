@@ -67,12 +67,20 @@
                         <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">albus@hogwarts.com</span>
                     </div> --}}
                     <ul class="py-2" aria-labelledby="user-menu-button">
-
                         <li>
                             <a href="/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                 out</a>
                         </li>
+                        <li>
+                            <a href="/profile"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
+                        </li>
+                        {{-- <li>
+                            <a href="/editProfile"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit
+                                Profile</a>
+                        </li> --}}
                     </ul>
                 </div>
 
@@ -145,7 +153,7 @@
                         Ruangan</a>
                 </div>
             </li>
-            <li>
+            {{-- <li>
                 <div class="flex items-center">
                     <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
@@ -157,7 +165,7 @@
                         Detail
                         Ruangan</a>
                 </div>
-            </li>
+            </li> --}}
             <li>
                 <div class="flex items-center">
                     <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
@@ -182,6 +190,7 @@
             </li> --}}
         </ol>
     </nav>
+
 
     <div class="border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mx-16 my-8 p-6">
         {{-- p-6 : jarak dari border ke dalam isi kotak  --}}
@@ -278,8 +287,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <button type="submit"
                     class="relative max-w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </div>
