@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request; // Tambahkan impor ini
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User; // Tambahkan impor ini jika belum ada
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -28,18 +28,16 @@ class LoginController extends Controller
 
         if ($user) {
             // Periksa apakah password yang dimasukkan sesuai
-            if (password_verify($request->password, $user->password)) {
+            if (Hash::check($request->password, $user->password)) {
                 // Jika autentikasi berhasil, login pengguna
                 Auth::login($user);
 
-                // Redirect pengguna sesuai dengan perannya
-                switch ($user->iduser) {
+                // Redirect pengguna sesuai dengan role_id
+                switch ($user->role_id) {
                     case 1:
                         return redirect()->route('home');
-                        break;
                     case 2:
                         return redirect()->route('admin.home');
-                        break;
                     default:
                         return redirect()->route('default.home');
                 }
@@ -51,5 +49,4 @@ class LoginController extends Controller
             'username' => 'Invalid username or password.',
         ]);
     }
-
 }
