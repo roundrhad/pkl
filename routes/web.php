@@ -30,22 +30,21 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/admin/home', [RuanganController::class, 'index2']);
 // Route::get('/home', [RuanganController::class, 'index'])->name('home')->middleware(RestrictLoginAccess::class);
 
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RuanganController;
+use App\Http\Controllers\LoginController;
 use App\Http\Middleware\RestrictLoginAccess;
 
+// Other routes...
+
+// Apply the RestrictLoginAccess middleware to all routes except the login route
 Route::middleware([RestrictLoginAccess::class])->group(function () {
     // Home Route
     Route::get('/home', [RuanganController::class, 'index'])->name('home');
 
     // Admin Home Route
     Route::get('/admin/home', [RuanganController::class, 'index2'])->name('admin.home');
-
-    // Default Home Route (Jika diperlukan)
-    Route::get('/default/home', function () {
-        return view('default.home');
-    })->name('default.home');
 });
+
 
 // Login Route
 Route::get('/', [LoginController::class, 'index'])->name('login');
@@ -60,7 +59,6 @@ Route::post('/', [LoginController::class, 'login'])->name('login.submit');
 use App\Http\Controllers\LihatDetailController;
 
 Route::get('/lihatDetail', [LihatDetailController::class, 'show'])->name('lihatDetail');
-Route::get('/lihatDetail', [LihatDetailController::class, 'show2'])->name('lihatDetail');
 // Route::get('/lihat-Detail', [LihatDetailController::class, 'show2'])->name('lihat-Detail');
 
 // File: routes/web.php
@@ -84,9 +82,9 @@ use App\Http\Controllers\DaftarRuanganController;
 Route::get('/daftarRuangan', [DaftarRuanganController::class, 'index'])->name('daftarRuangan');
 Route::get('/jmlRuangan', [DaftarRuanganController::class, 'index2'])->name('daftarRuangan');
 
-// Route::get('/editProfile', function () {
-//     return view('karyawan.editprofil');
-// });
+Route::get('/editProfile', function () {
+    return view('karyawan.editprofil');
+});
 
 Route::get('/detailNamaRuang', function () {
     return view('karyawan.detaildaftarR');
@@ -129,14 +127,12 @@ use App\Http\Controllers\ProfileController;
 // Route::get('/profile', function () {
 //     return view('karyawan.profile');
 // });
-//karyawan
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/editProfile', [ProfileController::class, 'show2'])->name('edit-profile');
 
-//admin
 Route::get('/profil', [ProfileController::class, 'show3'])->name('profile-show');
 Route::get('/editProfil', [ProfileController::class, 'show4'])->name('edit-profil');
- 
+
 
 Route::put('/update-password', [ProfileController::class, 'updatePassword'])->name('update.password');
 
